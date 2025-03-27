@@ -87,7 +87,7 @@ const Contact = () => {
 
                     <div className="w-full bg-white p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
                         <div className="flex">
-                            <h1 className="font-bold text-center lg:text-left text-blue-900 uppercase text-4xl">Send us a message</h1>
+                            <h1 className="font-bold text-center lg:text-left text-blue-900 uppercase text-4xl">Envianos un mensaje</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
                                 <div>
@@ -95,7 +95,7 @@ const Contact = () => {
                                         name="first_name" 
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="text" 
-                                        placeholder="First Name*" 
+                                        placeholder="Nombre*" 
                                         value={firstName}
                                         onChange={(e)=> setFirstName(e.target.value)}
                                         onKeyUp={clearErrors}
@@ -110,7 +110,7 @@ const Contact = () => {
                                         name="last_name" 
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="text" 
-                                        placeholder="Last Name*"
+                                        placeholder="Apellido*"
                                         value={lastName}
                                         onChange={(e)=> setLastName(e.target.value)}
                                         onKeyUp={clearErrors}
@@ -140,7 +140,7 @@ const Contact = () => {
                                         name="phone_number" 
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="number" 
-                                        placeholder="Phone*"
+                                        placeholder="Telefono*"
                                         value={phone}
                                         onChange={(e)=> setPhone(e.target.value)}
                                         onKeyUp={clearErrors}
@@ -153,7 +153,7 @@ const Contact = () => {
                         <div className="my-4">
                             <textarea 
                                 name="message" 
-                                placeholder="Message*" 
+                                placeholder="Mensaje*" 
                                 className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                 value={message}
                                 onChange={(e)=> setMessage(e.target.value)}
@@ -166,7 +166,7 @@ const Contact = () => {
                         <div className="my-2 w-1/2 lg:w-2/4">
                             <button type="submit" id="submitBtn" className="uppercase text-sm font-bold tracking-wide bg-gray-500 hover:bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
                                     focus:outline-none focus:shadow-outline">
-                                Send Message
+                              Enviar Mensaje
                             </button>
                         </div>
                 </div>
@@ -180,8 +180,8 @@ const Contact = () => {
                                         <i className="fas fa-map-marker-alt pt-2 pr-2" />
                                     </div>
                                     <div className="flex flex-col">
-                                        <h2 className="text-2xl">Office Address</h2>
-                                        <p className="text-gray-400">Ilo Awela, Ota, Ogun State</p>
+                                        <h2 className="text-2xl">Direccion</h2>
+                                        <p className="text-gray-400">Avenida Observatorio 281 Colonia Cove</p>
                                     </div>
                                 </div>
                     
@@ -191,12 +191,12 @@ const Contact = () => {
                         </div>
 
                         <div className="flex flex-col">
-                        <h2 className="text-2xl">Call Us</h2>
-                        <p className="text-gray-400">Tel: 08055384406</p>
+                        <h2 className="text-2xl">Llamanos</h2>
+                        <p className="text-gray-400">Tel: 555-8242-407</p>
                         
                             <div className='mt-5'>
-                                <h2 className="text-2xl">Send an E-mail</h2>
-                                <p className="text-gray-400">info@mld.ng</p>
+                                <h2 className="text-2xl">Envianos un email</h2>
+                                <p className="text-gray-400">servicio@ggir.mx</p>
                             </div>
                        
                         </div>
