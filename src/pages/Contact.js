@@ -27,8 +27,36 @@ const Contact = () => {
         setMessage('')
     }
 
+    const isValidEmail = (value) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+    }
+
+    const validateForm = () => {
+        const formErrors = {}
+        if (!firstName.trim()) formErrors.first_name = 'El nombre es requerido'
+        if (!lastName.trim()) formErrors.last_name = 'El apellido es requerido'
+        if (!email.trim()) {
+            formErrors.email = 'El correo es requerido'
+        } else if (!isValidEmail(email.trim())) {
+            formErrors.email = 'Ingresa un correo electrónico válido'
+        }
+        if (!phone.trim()) formErrors.phone_number = 'El teléfono es requerido'
+        if (!message.trim()) formErrors.message = 'El mensaje es requerido'
+        return formErrors
+    }
+
     const sendEmail = (e) => {
         e.preventDefault();
+
+        const formErrors = validateForm()
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors)
+            Notiflix.Notify.failure(
+                formErrors.email || 'Por favor corrige los errores en el formulario'
+            );
+            return;
+        }
+
         document.getElementById('submitBtn').disabled = true;
         document.getElementById('submitBtn').innerHTML = 'Loading...';
         let fData = new FormData();
@@ -50,6 +78,7 @@ const Contact = () => {
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('submitBtn').innerHTML = 'send message';
             clearInput()
+            clearErrors()
             //handle success
             Notiflix.Report.success(
                 'Success',
